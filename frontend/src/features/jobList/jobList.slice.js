@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getJobList } from './jobList.action';
 
 const initialState = {
+    totalCount: 1,
     jobList: [],
     loading: false,
     type: '',
@@ -22,7 +23,7 @@ export const jobSlice = createSlice({
             .addCase(getJobList.fulfilled, (state, action) => {
                 state.loading = false
                 state.jobList = state.jobList.concat(action.payload.jdList);
-                console.log(state.jobList)
+                state.totalCount = action.payload.totalCount
             })
             .addCase(getJobList.pending, (state, action) => {
                 state.loading = true
