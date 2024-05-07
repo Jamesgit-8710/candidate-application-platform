@@ -1,0 +1,40 @@
+.filtersContainer{
+    padding: 0 20vw;
+}
+
+.filters{
+    /* background-color: red; */
+    display: flex;
+    min-height: 50px;
+    flex-wrap: wrap;
+}
+
+.companyName{
+    border: 1px solid hsla(0, 0%, 80%);
+    border-radius: 4px;
+    transition: border-color 0.10s;
+    /* outline: #2684ff87 solid 0px; */
+    outline: none;
+    padding: 0 10px;
+    font-size: 0.8rem;
+    height: 36px;
+    width: 100px;
+    min-width: 148px;
+    margin: 3px;
+}
+
+.companyName:hover{
+    border: 1px solid hsl(0, 0%, 70%);
+}
+
+.companyName:focus{
+    border: 2px solid #2684FF;
+    /* border: none; */
+    /* outline: #2684FF solid 2px; */
+}
+
+.filter{
+    min-width: 170px;
+    font-size: 0.8rem;
+    margin: 3px;
+}

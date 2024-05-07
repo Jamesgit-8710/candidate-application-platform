@@ -2,9 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getJobList } from './jobList.action';
 
 const initialState = {
-    totalCount: 1,
+    isJobListLoaded: false,
     jobList: [],
-    loading: false,
     type: '',
     message: ''
 }
@@ -23,12 +22,14 @@ export const jobSlice = createSlice({
             .addCase(getJobList.fulfilled, (state, action) => {
                 state.loading = false
                 state.jobList = state.jobList.concat(action.payload.jdList);
-                state.totalCount = action.payload.totalCount
-            })
-            .addCase(getJobList.pending, (state, action) => {
-                state.loading = true
+                if(action.payload.jdList.length!==0){
+                    state.isJobListLoaded = false
+                }else{
+                    state.isJobListLoaded = true
+                }
             })
             .addCase(getJobList.rejected, (state, action) => {
+                state.isJobListLoaded = true
                 state.loading = false
                 state.message = "Something went wrong!"
                 state.type = 'error'
