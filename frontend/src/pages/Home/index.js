@@ -6,11 +6,16 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import CircularProgress from '@mui/material/CircularProgress';
 import Navbar from '../../components/Navbar';
 import Filters from '../../components/Filters';
+import { filteredJobs } from '../../utils';
 
 const Home = () => {
     const dispatch = useDispatch();
     const jobList = useSelector((state) => state.jobs.jobList);
+    const filters = useSelector((state) => state.jobs.filters);
+    const filteredJobList = filteredJobs(jobList, filters)
     const isJobListLoaded = useSelector((state) => state.jobs.isJobListLoaded);
+    const loading = useSelector((state) => state.jobs.loading);
+
     const [pagination, setPagination] = useState({
         limit: 15,
         offset: 0
@@ -33,19 +38,19 @@ const Home = () => {
             <Navbar />
             <Filters />
             <InfiniteScroll
-                dataLength={jobList.length}
+                dataLength={filteredJobList.length}
                 next={fetchMoreJobs}
-                hasMore={!isJobListLoaded}
+                hasMore={(!isJobListLoaded && filteredJobList.length !== 0) || loading}
                 loader={<div className='loading'><CircularProgress /></div>}
             >
-                {jobList.map((data, index) => (
+                {filteredJobList.map((data, index) => (
                     <div key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: "20px", margin: "10px" }}>
                         Company name - {data.companyName}
                     </div>
                 ))}
             </InfiniteScroll>
             {
-                (jobList.length === 0 && isJobListLoaded) && <p>No Jobs Available :(</p>
+                (filteredJobList.length === 0 && !loading) && <p>No Jobs Available :(</p>
             }
         </div>
     )

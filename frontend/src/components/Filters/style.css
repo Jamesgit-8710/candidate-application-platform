@@ -38,3 +38,17 @@
     font-size: 0.8rem;
     margin: 3px;
 }
+
+.clearAll{
+    font-size: 0.8rem;
+    color: hsl(0, 0%, 70%);
+    height: 13px;
+    margin-top: 14px;
+    margin-left: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+
+.clearAll:hover{
+    color: hsl(0, 0%, 53%);
+}

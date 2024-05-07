@@ -1,0 +1,10 @@
+[
+    {
+        "label": "Remote",
+        "value": "remote"
+    },
+    {
+        "label": "In-office",
+        "value": "onsite"
+    }
+]

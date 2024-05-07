@@ -1,35 +1,130 @@
 [
     {
-        "label": "Colours",
+        "label": "Engineering",
         "options": [
             {
-                "label": "Red",
-                "value": "red"
+                "label": "Backend",
+                "value": "backend"
             },
             {
-                "label": "Blue",
-                "value": "blue"
+                "label": "Frontend",
+                "value": "frontend"
             },
             {
-                "label": "Green",
-                "value": "green"
+                "label": "Fullstack",
+                "value": "fullstack"
+            },
+            {
+                "label": "Flutter",
+                "value": "flutter"
+            },
+            {
+                "label": "Android",
+                "value": "android"
+            },
+            {
+                "label": "Tech Lead",
+                "value": "tech lead"
+            },
+            {
+                "label": "IOS",
+                "value": "ios"
             }
         ]
     },
     {
-        "label": "Flavours",
+        "label": "Design",
         "options": [
             {
-                "label": "Chocolate",
-                "value": "chocolate"
+                "label": "Designer",
+                "value": "designer"
             },
             {
-                "label": "Vanilla",
-                "value": "vanilla"
+                "label": "Graphic Designer",
+                "value": "graphic designer"
             },
             {
-                "label": "Strawberry",
-                "value": "strawberry"
+                "label": "Product Designer",
+                "value": "product designer"
+            }
+        ]
+    },
+    {
+        "label": "Product",
+        "options": [
+            {
+                "label": "Product Manager",
+                "value": "product manager"
+            }
+        ]
+    },
+    {
+        "label": "Operations",
+        "options": [
+            {
+                "label": "Operations Manager",
+                "value": "operations manager"
+            }
+        ]
+    },
+    {
+        "label": "Sales",
+        "options": [
+            {
+                "label": "Sales Development Representative",
+                "value": "sales development representative"
+            },
+            {
+                "label": "Account Executive",
+                "value": "account executive"
+            },
+            {
+                "label": "Account Manager",
+                "value": "account manager"
+            }
+        ]
+    },
+    {
+        "label": "Marketing",
+        "options": [
+            {
+                "label": "Digital Marketing Manager",
+                "value": "digital marketing manager"
+            },
+            {
+                "label": "Marketing",
+                "value": "marketing"
+            },
+            {
+                "label": "Product Marketing Manager",
+                "value": "product marketing manager"
+            }
+        ]
+    },
+    {
+        "label": "Hr",
+        "options": [
+            {
+                "label": "Hr",
+                "value": "hr"
+            }
+        ]
+    },
+    {
+        "label": "Finance",
+        "options": [
+            {
+                "label": "Finance",
+                "value": "finance"
+            }
+        ]
+    },
+    {
+        "label": "Management",
+        "options": [
+            {
+                "label": "Management",
+                "value": "management"
             }
         ]
     }
