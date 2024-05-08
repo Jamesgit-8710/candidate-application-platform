@@ -8,7 +8,7 @@ Candidate application platform that allows users to view job listings, filter jo
 
 # Frontend
 
-### `cd frontend`
+### `cd candidate-application-platform`
 
 
 # Install dependencies:
