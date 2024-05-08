@@ -1,9 +1,8 @@
 
 export const filteredJobs = (jobList,filters) => {
-    let filteredJobs = jobList.filter(job => {
+    const filteredJobs = jobList.filter(job => {
         // filter logic based on the selected filters
 
-        
         let remoteOnsite = 'remote'
         if(job.location !== 'remote'){
             remoteOnsite = 'onsite'
@@ -19,6 +18,6 @@ export const filteredJobs = (jobList,filters) => {
         return roleMatch && locationMatch && experienceMatch && remoteOnsiteMatch && minBasePayMatch && companyNameMatch;
     });
 
-    return filteredJobs
+    return filteredJobs;
 };
 
