@@ -7,6 +7,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import Navbar from '../../components/Navbar';
 import Filters from '../../components/Filters';
 import { filteredJobs } from '../../utils';
+import Card from '../../components/Card';
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -43,11 +44,11 @@ const Home = () => {
                 hasMore={(!isJobListLoaded && filteredJobList.length !== 0) || loading}
                 loader={<div className='loading'><CircularProgress /></div>}
             >
-                {filteredJobList.map((data, index) => (
-                    <div key={index} style={{ border: "1px solid black", borderRadius: "10px", padding: "20px", margin: "10px" }}>
-                        Company name - {data.companyName}
-                    </div>
-                ))}
+                <div className='jobCards'>
+                    {filteredJobList.map((data, index) => (
+                        <Card key={index} jobData={data} />
+                    ))}
+                </div>
             </InfiniteScroll>
             {
                 (filteredJobList.length === 0 && !loading) && <p>No Jobs Available :(</p>

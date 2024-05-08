@@ -3,3 +3,10 @@
     display: flex;
     justify-content: center;
 }
+
+.jobCards{
+    padding: 0 15vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
