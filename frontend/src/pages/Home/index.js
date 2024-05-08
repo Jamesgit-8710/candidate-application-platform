@@ -8,6 +8,7 @@ import Navbar from '../../components/Navbar';
 import Filters from '../../components/Filters';
 import { filteredJobs } from '../../utils';
 import Card from '../../components/Card';
+import noResult from '../../assets/no-results.png'
 
 const Home = () => {
     const dispatch = useDispatch();
@@ -41,8 +42,8 @@ const Home = () => {
             <InfiniteScroll
                 dataLength={filteredJobList.length}
                 next={fetchMoreJobs}
-                hasMore={(!isJobListLoaded && filteredJobList.length !== 0) || loading}
-                loader={<div className='loading'><CircularProgress /></div>}
+                hasMore={!isJobListLoaded}
+                loader={!isJobListLoaded && loading ? <div className='loading'><CircularProgress /></div> : ''}
             >
                 <div className='jobCards'>
                     {filteredJobList.map((data, index) => (
@@ -51,7 +52,11 @@ const Home = () => {
                 </div>
             </InfiniteScroll>
             {
-                (filteredJobList.length === 0 && !loading) && <p>No Jobs Available :(</p>
+                (filteredJobList.length === 0 && !loading) && 
+                <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", marginTop: "50px"}}>
+                    <img src={noResult} height={150}/>
+                    <p style={{fontSize: "1.3rem", marginTop: "20px", fontWeight: "600"}}>No Jobs Available!</p>
+                </div>
             }
         </div>
     )
